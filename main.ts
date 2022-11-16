@@ -26,7 +26,7 @@ const main = async () => {
 
         info("instalationAuth OK");
 
-        setOutput("outputToken", installationAuth.token);
+        setOutput("token", installationAuth.token);
 
         info("setOutPut OK");
         info(installationAuth.token);
