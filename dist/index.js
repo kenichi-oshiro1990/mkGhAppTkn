@@ -14640,6 +14640,9 @@ const privateKey = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)("PK")
 const installationId = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)("installationId");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)("appId:" + appId);
+        (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)("privateKey:" + privateKey);
+        (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)("installationId:" + installationId);
         const auth = (0,_octokit_auth_app__WEBPACK_IMPORTED_MODULE_1__/* .createAppAuth */ .iq)({
             appId,
             privateKey,
@@ -14650,7 +14653,9 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
             type: 'installation'
         });
         (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)("instalationAuth OK");
-        (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput)("outputToken", installationAuth.token);
+        const appToken = installationAuth.token;
+        (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.setSecret)(appToken);
+        (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput)("token", appToken);
         (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)("setOutPut OK");
         (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(installationAuth.token);
     }
