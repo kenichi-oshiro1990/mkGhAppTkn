@@ -31,7 +31,6 @@ const main = async () => {
         setOutput("token", appToken);
 
         info("setOutPut OK");
-        info(installationAuth.token);
     }
     catch (error: any) {
         setFailed(error.message)
