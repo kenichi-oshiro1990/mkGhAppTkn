@@ -11,7 +11,7 @@ inputs:
     description: 'instllationId'
     required: true
 outputs:
-  outputAuth: 
+  token: 
     description: 'Github App Auth Token'
 runs:
   using: node16
