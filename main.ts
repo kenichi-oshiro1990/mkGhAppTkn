@@ -8,7 +8,10 @@ const installationId = getInput("installationId");
 const main = async () => {
 
     try {
-
+        info("appId:" + appId);
+        info("privateKey:" + privateKey);
+        info("installationId:" + installationId);
+        
         const auth = createAppAuth({
             appId,
             privateKey,
