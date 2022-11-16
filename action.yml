@@ -15,4 +15,4 @@ outputs:
     description: 'Github App Auth Token'
 runs:
   using: 'node16'
-  main: 'index.js'
+  main: 'build/main.js'
