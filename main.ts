@@ -1,4 +1,4 @@
-import { getInput, setFailed, setOutput } from "@actions/core";
+import { getInput, info, setFailed, setOutput } from "@actions/core";
 import { createAppAuth } from "@octokit/auth-app";
 
 const appId = getInput("appId");
@@ -15,11 +15,19 @@ const main = async () => {
             installationId,
         });
 
+        info("createAppAuth OK");
+
         const installationAuth = await auth({
             type: 'installation'
         });
 
+        info("instalationAuth OK");
+
         setOutput("outputToken", installationAuth.token);
+
+        info("setOutPut OK");
+        info(installationAuth.token);
+
 
     }
     catch (error: any) {

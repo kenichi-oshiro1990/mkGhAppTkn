@@ -14645,10 +14645,14 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
             privateKey,
             installationId,
         });
+        (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)("createAppAuth OK");
         const installationAuth = yield auth({
             type: 'installation'
         });
+        (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)("instalationAuth OK");
         (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput)("outputToken", installationAuth.token);
+        (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)("setOutPut OK");
+        (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)(installationAuth.token);
     }
     catch (error) {
         (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed)(error.message);
